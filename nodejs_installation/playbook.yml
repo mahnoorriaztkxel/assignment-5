@@ -1,8 +1,0 @@
----
-- name: Install Node.js using Ansible Role
-  hosts: localhost
-  become: yes
-
-  roles:
-    - nodejs
-
