@@ -1,0 +1,21 @@
+---
+# Tasks to install Node.js
+
+- name: Add Node.js repository
+  shell: curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+
+- name: Install Node.js
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Check Node.js version
+  command: node -v
+  register: node_version
+
+- name: Display installed Node.js version
+  debug:
+    msg: "Installed Node.js version: {{ node_version.stdout }}"
+
