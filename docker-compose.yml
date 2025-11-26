@@ -1,0 +1,11 @@
+services:
+  myapp:
+    build: .
+    restart: always
+    ports:
+      - "81:80"  # Explicit binding
+#     networks:
+#       - myapp-network
+
+# networks:
+#   myapp-network:
